@@ -1,0 +1,44 @@
+<%#    Copyright (C) 2013-2014 Computer Sciences Corporation %>
+
+<%#    Licensed under the Apache License, Version 2.0 (the "License"); %>
+<%#    you may not use this file except in compliance with the License. %>
+<%#    You may obtain a copy of the License at %>
+
+<%#        http://www.apache.org/licenses/LICENSE-2.0 %>
+
+<%#    Unless required by applicable law or agreed to in writing, software %>
+<%#    distributed under the License is distributed on an "AS IS" BASIS, %>
+<%#    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. %>
+<%#    See the License for the specific language governing permissions and %>
+<%#    limitations under the License. %>
+<% content_for :sidebar do %>
+    <%= render partial: 'layouts/sidebar_previous_shared' %>
+<% end %>
+<div class="section-wrapper home-section">
+    <a class="launch-help" href="#"><span class="icon-question"></span></a>
+    <div class="splash">
+        <div class="intro">
+            <%= image_tag 'amino-logo.png' %>
+            <h1>Welcome Back</h1>
+            <h2><%= @user.username %></h2>
+            <p>Sed vulputate, mi at aliquam imperdiet, enim sem fringilla sem, quis euismod odio dolor eu turpis. Nunc iaculis molestie lacus sit amet interdum.</p>
+        </div>
+        <div class="option">
+            <span class="icon-file"></span>
+            <h1>Inquiry</h1>
+            <h2>Create a New Report</h2>
+            <p>Fusce non tortor dignissim, aliquet nulla quis, rhoncus mi. Duis in condimentum odio. Maecenas nec consectetur elit.</p>
+            <%= link_to 'Start New inquiry', controller: 'inquire' %>
+        </div>
+        <div class="option">
+            <span class="icon-book"></span>
+            <h1>Learn & Share</h1>
+            <h2>Research & Review Previous Reports</h2>
+            <p>Aenean a felis et lectus iaculis ultricies. Donec porta, turpis quis volutpat pretium, metus eros aliquet urna, dictum aliquet turpis.</p>
+            <a href="#">Research and Review</a>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright &copy; 2014. Amino&trade; | Hypothesis Engine. All rights reserved.</p>
+    </div>
+</div>

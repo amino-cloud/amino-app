@@ -1,0 +1,57 @@
+<%#    Copyright (C) 2013-2014 Computer Sciences Corporation %>
+
+<%#    Licensed under the Apache License, Version 2.0 (the "License"); %>
+<%#    you may not use this file except in compliance with the License. %>
+<%#    You may obtain a copy of the License at %>
+
+<%#        http://www.apache.org/licenses/LICENSE-2.0 %>
+
+<%#    Unless required by applicable law or agreed to in writing, software %>
+<%#    distributed under the License is distributed on an "AS IS" BASIS, %>
+<%#    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. %>
+<%#    See the License for the specific language governing permissions and %>
+<%#    limitations under the License. %>
+<div id="webapp-side-panel" class="side-panel <%= 'bounceInLeft animated' if @should_animate %>" ng-controller="inquireSidebar" ng-init="init()">
+	<div class="search">
+		<div class="input-container">
+			<input type="text" placeholder="Search" />
+			<button><span class="icon-search"></span></button>
+		</div>
+	</div>
+	<div class="accordion-wrapper clearfix">
+		<div class="accordionButton initial-child">Previous Inquiries <span class="icon-minus collapse"></span><span class="icon-plus expand"></span></div>
+		<div class="accordionContent paging home">
+			<ul id="previousEntriesList" class="entries">
+                <inquiry-entry entry="entry" click-handler="$parent.inquiry_click" ng-repeat="entry in inquiries.previous"></inquiry-entry>
+			</ul>
+			<div class="pagination">
+				<ul class="clearfix">
+					<li><a href="#"><span class="icon-arrow-left2"></span></a></li>
+					<li class="active"><a href="#">1</a></li>
+					<li><a href="#">2</a></li>
+					<li><p>...</p></li>
+					<li><a href="#">4</a></li>
+					<li><a href="#">5</a></li>
+					<li><a href="#"><span class="icon-arrow-right2"></span></a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="accordionButton">Shared Inquiries <span class="icon-minus collapse"></span><span class="icon-plus expand"></span></div>
+		<div class="accordionContent paging home">
+			<ul id="sharedEntriesList" class="entries">
+                <inquiry-entry entry="entry"  ng-repeat="entry in inquiries.shared"></inquiry-entry>
+			</ul>
+			<div class="pagination">
+				<ul class="clearfix">
+					<li><a href="#"><span class="icon-arrow-left2"></span></a></li>
+					<li class="active"><a href="#">1</a></li>
+					<li><a href="#">2</a></li>
+					<li><p>...</p></li>
+					<li><a href="#">4</a></li>
+					<li><a href="#">5</a></li>
+					<li><a href="#"><span class="icon-arrow-right2"></span></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

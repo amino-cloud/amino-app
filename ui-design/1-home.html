@@ -1,0 +1,465 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!--   Copyright (C) 2013-2014 Computer Sciences Corporation
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License. -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Home | Amino&trade; - Hypothesis Engine &trade;</title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" type="text/css" media="all" href="assets/css/reset.css" /> <!-- CSS reset -->
+<!-- <link rel="stylesheet" type="text/css" media="all" href="assets/css/normalize.css" /> <!-- CSS reset alternative -->
+<link rel="stylesheet" type="text/css" media="all" href="assets/css/base.css" /> <!-- Includes box-sizing and clearfix -->
+<link rel="stylesheet" type="text/css" media="all" href="assets/css/media-queries.css" /> <!-- Responsive media queries -->
+<link rel="stylesheet" type="text/css" media="all" href="assets/css/custom-fonts.css" /> <!-- Custom fonts manager -->
+
+<link rel="stylesheet" type="text/css" media="all" href="assets/css/webapp.css" /> <!-- Webapp CSS -->
+<link rel="stylesheet" type="text/css" media="all" href="assets/fonts/webapp-icons/style.css" /> <!-- Webapp Icons CSS -->
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery-accordion.js"></script>
+<script type="text/javascript" src="assets/js/jquery-dropdown.js"></script>
+
+<script type="text/javascript">
+	
+	$(document).ready(function () {		
+		
+		// Sliding Panel Toggle
+		
+		$('#webapp-menu-panel').on('click', function(){
+		    if($('#webapp-content').hasClass('content-full')) {       
+		        $('#webapp-content').removeClass('content-full');
+		    }
+		    else{
+		        $('#webapp-content').addClass('content-full');
+		    }
+		});
+		$('#webapp-menu-panel').on('click', function(){
+		    if($('#webapp-side-panel').hasClass('hide')) {       
+		        $('#webapp-side-panel').removeClass('hide');
+		    }
+		    else{
+		        $('#webapp-side-panel').addClass('hide');
+		    }
+		});
+		
+		// Custom Dropdown
+		
+		$("select").msDropdown();
+
+	});
+	
+</script>
+
+</head>
+
+<body>
+
+	<div id="webapp-wrapper" class="clearfix">
+		<div class="header clearfix">
+			<div class="logo">
+				<img src="assets/images/amino-logo.png" />
+				<h1>Amino&trade;</h1>
+				<p>Hypothesis Engine</p>
+			</div>
+			<div class="controls clearfix">
+				<a class="user" href="#">
+					<img src="assets/images/sample-profile.jpg" />
+					<span class="alerts-count">5</span>
+				</a>
+				<a class="controls-btn" href="#"><span class="icon-file"></span></a> <!-- class="active"> -->
+				<a class="controls-btn" href="#"><span class="icon-book"></span></a>
+			</div>
+		</div>
+		<div id="webapp-container">
+			<div id="webapp-side-panel" class="side-panel">
+				<div class="search">
+					<div class="input-container">
+						<input type="text" placeholder="Search" />
+						<button><span class="icon-search"></span></button>
+					</div>
+				</div>
+				<div class="accordion-wrapper clearfix">
+					<div class="accordionButton initial-child">Previous Inquiries <span class="icon-minus collapse"></span><span class="icon-plus expand"></span></div>
+					<div class="accordionContent paging home">
+						<ul class="entries">
+							<li> <!-- class="active" -->
+								<a href="#" class="clearfix">
+									<span class="icon-check"></span>
+									<h2>Lorem Ipsum Dolor Sit Amet Rutrum</h2>
+									<p>0000-00-00T00:00:00-00:00</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="clearfix">
+									<span class="icon-check"></span>
+									<h2>Donec Placerat Leo Elit</h2>
+									<p>0000-00-00T00:00:00-00:00</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="clearfix">
+									<span class="icon-check"></span>
+									<h2>Nullam At Turpis Eus Mauris Luctus Bibendum Porttitor</h2>
+									<p>0000-00-00T00:00:00-00:00</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="clearfix">
+									<span class="icon-check"></span>
+									<h2>Lorem Ipsum Dolor Sit Amet Rutrum</h2>
+									<p>0000-00-00T00:00:00-00:00</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="clearfix">
+									<span class="icon-check"></span>
+									<h2>Donec Placerat Leo Elit</h2>
+									<p>0000-00-00T00:00:00-00:00</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="clearfix">
+									<span class="icon-check"></span>
+									<h2>Nullam At Turpis Eus Mauris Luctus Bibendum Porttitor</h2>
+									<p>0000-00-00T00:00:00-00:00</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="clearfix">
+									<span class="icon-check"></span>
+									<h2>Lorem Ipsum Dolor Sit Amet Rutrum</h2>
+									<p>0000-00-00T00:00:00-00:00</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="clearfix">
+									<span class="icon-check"></span>
+									<h2>Donec Placerat Leo Elit</h2>
+									<p>0000-00-00T00:00:00-00:00</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="clearfix">
+									<span class="icon-check"></span>
+									<h2>Nullam At Turpis Eus Mauris Luctus Bibendum Porttitor</h2>
+									<p>0000-00-00T00:00:00-00:00</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="clearfix">
+									<span class="icon-check"></span>
+									<h2>Lorem Ipsum Dolor Sit Amet Rutrum</h2>
+									<p>0000-00-00T00:00:00-00:00</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="clearfix">
+									<span class="icon-check"></span>
+									<h2>Donec Placerat Leo Elit</h2>
+									<p>0000-00-00T00:00:00-00:00</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="clearfix">
+									<span class="icon-check"></span>
+									<h2>Nullam At Turpis Eus Mauris Luctus Bibendum Porttitor</h2>
+									<p>0000-00-00T00:00:00-00:00</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="clearfix">
+									<span class="icon-check"></span>
+									<h2>Lorem Ipsum Dolor Sit Amet Rutrum</h2>
+									<p>0000-00-00T00:00:00-00:00</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="clearfix">
+									<span class="icon-check"></span>
+									<h2>Donec Placerat Leo Elit</h2>
+									<p>0000-00-00T00:00:00-00:00</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="clearfix">
+									<span class="icon-check"></span>
+									<h2>Nullam At Turpis Eus Mauris Luctus Bibendum Porttitor</h2>
+									<p>0000-00-00T00:00:00-00:00</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="clearfix">
+									<span class="icon-check"></span>
+									<h2>Lorem Ipsum Dolor Sit Amet Rutrum</h2>
+									<p>0000-00-00T00:00:00-00:00</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="clearfix">
+									<span class="icon-check"></span>
+									<h2>Donec Placerat Leo Elit</h2>
+									<p>0000-00-00T00:00:00-00:00</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="clearfix">
+									<span class="icon-check"></span>
+									<h2>Nullam At Turpis Eus Mauris Luctus Bibendum Porttitor</h2>
+									<p>0000-00-00T00:00:00-00:00</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="clearfix">
+									<span class="icon-check"></span>
+									<h2>Lorem Ipsum Dolor Sit Amet Rutrum</h2>
+									<p>0000-00-00T00:00:00-00:00</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="clearfix">
+									<span class="icon-check"></span>
+									<h2>Donec Placerat Leo Elit</h2>
+									<p>0000-00-00T00:00:00-00:00</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="clearfix">
+									<span class="icon-check"></span>
+									<h2>Nullam At Turpis Eus Mauris Luctus Bibendum Porttitor</h2>
+									<p>0000-00-00T00:00:00-00:00</p>
+								</a>
+							</li>
+						</ul>
+						<div class="pagination">
+							<ul class="clearfix">
+								<li><a href="#"><span class="icon-arrow-left2"></span></a></li>
+								<li class="active"><a href="#">1</a></li>
+								<li><a href="#">2</a></li>
+								<li><p>...</p></li>
+								<li><a href="#">4</a></li>
+								<li><a href="#">5</a></li>
+								<li><a href="#"><span class="icon-arrow-right2"></span></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="accordionButton">Shared Inquiries <span class="icon-minus collapse"></span><span class="icon-plus expand"></span></div>
+					<div class="accordionContent paging home">
+						<ul class="entries">
+							<li> <!-- class="active" -->
+								<a href="#" class="clearfix">
+									<span class="icon-check"></span>
+									<h2>Lorem Ipsum Dolor Sit Amet Rutrum</h2>
+									<p>0000-00-00T00:00:00-00:00</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="clearfix">
+									<span class="icon-check"></span>
+									<h2>Donec Placerat Leo Elit</h2>
+									<p>0000-00-00T00:00:00-00:00</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="clearfix">
+									<span class="icon-check"></span>
+									<h2>Nullam At Turpis Eus Mauris Luctus Bibendum Porttitor</h2>
+									<p>0000-00-00T00:00:00-00:00</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="clearfix">
+									<span class="icon-check"></span>
+									<h2>Lorem Ipsum Dolor Sit Amet Rutrum</h2>
+									<p>0000-00-00T00:00:00-00:00</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="clearfix">
+									<span class="icon-check"></span>
+									<h2>Donec Placerat Leo Elit</h2>
+									<p>0000-00-00T00:00:00-00:00</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="clearfix">
+									<span class="icon-check"></span>
+									<h2>Nullam At Turpis Eus Mauris Luctus Bibendum Porttitor</h2>
+									<p>0000-00-00T00:00:00-00:00</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="clearfix">
+									<span class="icon-check"></span>
+									<h2>Lorem Ipsum Dolor Sit Amet Rutrum</h2>
+									<p>0000-00-00T00:00:00-00:00</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="clearfix">
+									<span class="icon-check"></span>
+									<h2>Donec Placerat Leo Elit</h2>
+									<p>0000-00-00T00:00:00-00:00</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="clearfix">
+									<span class="icon-check"></span>
+									<h2>Nullam At Turpis Eus Mauris Luctus Bibendum Porttitor</h2>
+									<p>0000-00-00T00:00:00-00:00</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="clearfix">
+									<span class="icon-check"></span>
+									<h2>Lorem Ipsum Dolor Sit Amet Rutrum</h2>
+									<p>0000-00-00T00:00:00-00:00</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="clearfix">
+									<span class="icon-check"></span>
+									<h2>Donec Placerat Leo Elit</h2>
+									<p>0000-00-00T00:00:00-00:00</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="clearfix">
+									<span class="icon-check"></span>
+									<h2>Nullam At Turpis Eus Mauris Luctus Bibendum Porttitor</h2>
+									<p>0000-00-00T00:00:00-00:00</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="clearfix">
+									<span class="icon-check"></span>
+									<h2>Lorem Ipsum Dolor Sit Amet Rutrum</h2>
+									<p>0000-00-00T00:00:00-00:00</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="clearfix">
+									<span class="icon-check"></span>
+									<h2>Donec Placerat Leo Elit</h2>
+									<p>0000-00-00T00:00:00-00:00</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="clearfix">
+									<span class="icon-check"></span>
+									<h2>Nullam At Turpis Eus Mauris Luctus Bibendum Porttitor</h2>
+									<p>0000-00-00T00:00:00-00:00</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="clearfix">
+									<span class="icon-check"></span>
+									<h2>Lorem Ipsum Dolor Sit Amet Rutrum</h2>
+									<p>0000-00-00T00:00:00-00:00</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="clearfix">
+									<span class="icon-check"></span>
+									<h2>Donec Placerat Leo Elit</h2>
+									<p>0000-00-00T00:00:00-00:00</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="clearfix">
+									<span class="icon-check"></span>
+									<h2>Nullam At Turpis Eus Mauris Luctus Bibendum Porttitor</h2>
+									<p>0000-00-00T00:00:00-00:00</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="clearfix">
+									<span class="icon-check"></span>
+									<h2>Lorem Ipsum Dolor Sit Amet Rutrum</h2>
+									<p>0000-00-00T00:00:00-00:00</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="clearfix">
+									<span class="icon-check"></span>
+									<h2>Donec Placerat Leo Elit</h2>
+									<p>0000-00-00T00:00:00-00:00</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="clearfix">
+									<span class="icon-check"></span>
+									<h2>Nullam At Turpis Eus Mauris Luctus Bibendum Porttitor</h2>
+									<p>0000-00-00T00:00:00-00:00</p>
+								</a>
+							</li>
+						</ul>
+						<div class="pagination">
+							<ul class="clearfix">
+								<li><a href="#"><span class="icon-arrow-left2"></span></a></li>
+								<li class="active"><a href="#">1</a></li>
+								<li><a href="#">2</a></li>
+								<li><p>...</p></li>
+								<li><a href="#">4</a></li>
+								<li><a href="#">5</a></li>
+								<li><a href="#"><span class="icon-arrow-right2"></span></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="webapp-content" class="content">
+				<div class="controls-wrapper">
+					<div class="controls">
+						<a id="webapp-menu-panel" href="#"><span class="icon-menu"></span></a>
+					</div>
+				</div>
+				<div class="section-wrapper home-section">
+					<a class="launch-help" href="#"><span class="icon-question"></span></a>
+					<div class="splash">
+						<div class="intro">
+							<img src="assets/images/amino-logo.png" />
+							<h1>Welcome Back</h1>
+							<h2>James Clayton</h2>
+							<p>Sed vulputate, mi at aliquam imperdiet, enim sem fringilla sem, quis euismod odio dolor eu turpis. Nunc iaculis molestie lacus sit amet interdum.</p>
+						</div>
+						<div class="option">
+							<span class="icon-file"></span>
+							<h1>Inquiry</h1>
+							<h2>Create a New Report</h2>
+							<p>Fusce non tortor dignissim, aliquet nulla quis, rhoncus mi. Duis in condimentum odio. Maecenas nec consectetur elit.</p>
+							<a href="#">Start New inquiry</a>
+						</div>
+						<div class="option">
+							<span class="icon-book"></span>
+							<h1>Learn & Share</h1>
+							<h2>Research & Review Previous Reports</h2>
+							<p>Aenean a felis et lectus iaculis ultricies. Donec porta, turpis quis volutpat pretium, metus eros aliquet urna, dictum aliquet turpis.</p>
+							<a href="#">Research and Review</a>
+						</div>
+					</div>
+					<div class="copyright">
+						<p>Copyright &copy; 2014. Amino&trade; | Hypothesis Engine. All rights reserved.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+
+</body>
+</html>

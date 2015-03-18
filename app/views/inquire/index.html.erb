@@ -1,0 +1,54 @@
+<%#    Copyright (C) 2013-2014 Computer Sciences Corporation %>
+
+<%#    Licensed under the Apache License, Version 2.0 (the "License"); %>
+<%#    you may not use this file except in compliance with the License. %>
+<%#    You may obtain a copy of the License at %>
+
+<%#        http://www.apache.org/licenses/LICENSE-2.0 %>
+
+<%#    Unless required by applicable law or agreed to in writing, software %>
+<%#    distributed under the License is distributed on an "AS IS" BASIS, %>
+<%#    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. %>
+<%#    See the License for the specific language governing permissions and %>
+<%#    limitations under the License. %>
+<% content_for :sidebar do %>
+    <%= render partial: 'layouts/sidebar_features' %>
+<% end %>
+<% content_for :modal do %>
+    <%= render partial: 'dataset_modal' %>
+    <% if @inquiry_id %>
+    <%= render partial: 'confirm_delete_modal' %>
+    <% end %>
+<% end %>
+<% content_for :control_bar do %>
+    <div id="webapp-details" class="clearfix" ng-controller="InquireControlBarCtrl">
+        <div class="input-container">
+            <input type="text" placeholder="Enter Name" ng-model="name" />
+        </div>
+        <div class="input-container">
+            <input type="text" placeholder="Enter Justification" ng-model="justification" />
+        </div>
+    </div>
+<% end %>
+
+<div ng-controller="inquire" ng-init="initialize(<%='\'' + @inquiry_id + '\'' if @inquiry_id %>)">
+    <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+    <div id="features-list" class="section-wrapper features-section">
+        <div class="selected-features" ng-repeat="entry in selected_features">
+            <div class="feature-wrapper" id="feature-box-{{entry.feature.id}}"
+                 ng-controller="FeatureBoxBaseCtrl" ng-model="entry" ng-init="initialize(entry)">
+                <div class="close-custom" ng-click="remove_feature()">
+                    <span class="icon-cancel"></span>
+                </div>
+                <div ng-include="template_file_url()"></div>
+            </div>
+        </div>
+    </div>
+    <div class="actions">
+        <button ng-click="clear_features()">Clear</button>
+        <% if @inquiry_id %>
+        <button class="delete" ng-click="confirm_inquiry_delete()">Delete</button>
+        <% end %>
+        <button class="primary" ng-click="save_and_execute()">Save and Execute Inquery</button>
+    </div>
+</div>

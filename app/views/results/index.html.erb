@@ -1,0 +1,173 @@
+<%#    Copyright (C) 2013-2014 Computer Sciences Corporation %>
+
+<%#    Licensed under the Apache License, Version 2.0 (the "License"); %>
+<%#    you may not use this file except in compliance with the License. %>
+<%#    You may obtain a copy of the License at %>
+
+<%#        http://www.apache.org/licenses/LICENSE-2.0 %>
+
+<%#    Unless required by applicable law or agreed to in writing, software %>
+<%#    distributed under the License is distributed on an "AS IS" BASIS, %>
+<%#    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. %>
+<%#    See the License for the specific language governing permissions and %>
+<%#    limitations under the License. %>
+<% content_for :sidebar do %>
+    <%= render partial: 'layouts/sidebar_previous_shared' %>
+<% end %>
+<% content_for :control_bar do %>
+    <div id="webapp-details" class="clearfix" ng-controller="ResultsControlBarCtrl">
+        <div class="input-container">
+            <input type="text" placeholder="Enter Name" ng-model="inquiry.name" readonly/>
+        </div>
+        <div class="input-container">
+            <input type="text" placeholder="Enter Justification" ng-model="inquiry.justification" readonly/>
+        </div>
+    </div>
+<% end %>
+<% content_for :subcontrol_bar do %>
+    <div class="sub-controls" ng-controller="ResultsSubControlBarCtrl">
+    <a ng-href="{{inquiry_path}}"><span class="icon-arrow-left"></span></a>
+    <div class="controls-label">
+        <p>Run On <span>{{inquiry.executed | date:'short'}}</span></p>
+    </div>
+    <div class="switch">
+        <p>View Results Charts</p>
+        <input id="cmn-toggle-4" class="cmn-toggle cmn-toggle-round-flat" type="checkbox">
+        <label for="cmn-toggle-4"></label>
+    </div>
+    </div>
+<% end %>
+
+<div class="section-wrapper features-section section-wrapper results-section" ng-controller="ResultsCtrl" ng-init="initialize('<%=@result_id%>')">
+    <div id="features-list">
+        <div class="results-features clearfix">
+            <div class="results-toggle results-toggle-features disable-select clearfix">
+                <h1>Features</h1>
+                <span class="results-count">{{inquiry.features.length}}</span>
+                <a class="collapse active" href="#"><span class="icon-minus"></span></a>
+                <a class="expand" href="#"><span class="icon-plus"></span></a>
+            </div>
+            <div class="results-draw results-draw-table results-draw-features">
+                
+                <ul class="results-list-header clearfix">
+					<li><p>Feature Name</p> <span class="icon-menu3 sort"></span></li>
+					<li><p>Feature Name</p> <a href="#">View All</a> <span class="icon-menu3 sort"></span></li>
+				</ul>
+				<ul class="results-list-return features clearfix">
+					<li ng-repeat="feature in inquiry.features">
+						<p>{{feature.name}}</p>
+						<p>{{get_value(feature)}}</p>
+					</li>
+				</ul>
+
+                <!--
+                <table class="results results-features">
+                    <thead>
+	                    <tr>
+	                        <th>
+	                            <div class="thead-label clearfix"><p>Feature Name</p> <span class="icon-menu3 sort"></span>
+	                            </div>
+	                        </th>
+	                        <th>
+	                            <div class="thead-label thead-label-controls clearfix"><p>Feature Value</p>
+	                                <span class="icon-menu3 sort"></span></div>
+	                            <a href="#">View All</a>
+	                        </th>
+	                    </tr>
+                    </thead>
+                    <tbody>
+	                    <tr class="clearfix" ng-repeat="feature in inquiry.features">
+	                        <td><p>{{feature.name}}</p></td>
+	                        <td><p>{{get_value(feature)}}</p></td>
+	                    </tr>
+                    </tbody>
+                </table>
+                -->
+                <div class="pagination">
+                    <ul class="clearfix">
+                        <li><a href="#"><span class="icon-arrow-left2"></span></a></li>
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><p>...</p></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#"><span class="icon-arrow-right2"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="results-features clearfix">
+            <div class="results-toggle results-toggle-return disable-select clearfix">
+                <h1>Results</h1>
+                <span class="results-count">{{results.length}}</span>
+                <a class="collapse active" href="#"><span class="icon-minus"></span></a>
+                <a class="expand" href="#"><span class="icon-plus"></span></a>
+            </div>
+            <!-- Feel free to adjust this completely -->
+            <div class="results-draw results-draw-table results-draw-return">
+                
+                <ul class="results-list-header clearfix">
+					<li>
+						<p>Results Returned</p>
+						<a href="#">View All</a>
+						<a href="#">Export</a>
+						<a class="results-toggle results-toggle-tile layout" href="#">
+							<span class="icon-toggle icon-layout"></span>
+						</a>
+						<a class="results-toggle results-toggle-table layout active" href="#">
+							<span class="icon-toggle icon-list2"></span>
+						</a>
+						<span class="icon-menu3 sort"></span>
+					</li>
+				</ul>
+				<ul class="results-list-return clearfix">
+                    <li ng-repeat="result in results">
+                        <a href="#">
+                            <p>{{result.bucket_name}}</p>
+                            <span class="dataset-bucket-label">Ice Nine | Polymorph</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <!--
+                <div class="results-header">
+                    <div class="thead-label clearfix">
+                    	<p>Results Returned</p>
+                        <span class="icon-menu3 sort"></span>
+                    </div>
+                    <a href="#">View All</a>
+                    <a href="#">Export</a>
+                    <a class="results-toggle results-toggle-tile" href="#">
+                    	<span class="icon-toggle icon-layout"></span>
+                    </a>
+                    <a class="results-toggle results-toggle-table active" href="#">
+                    	<span class="icon-toggle icon-list2"></span>
+                    </a>
+                </div>
+                <div class="results-content">
+                    <ul class="results-list-return">
+                        <li ng-repeat="result in results">
+                            <a href="#">
+                                <p>{{result.bucket_name}}</p>
+                                <span class="dataset-bucket-label">Ice Nine | Polymorph</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                -->
+                
+                <div class="pagination">
+                    <ul class="clearfix">
+                        <li><a href="#"><span class="icon-arrow-left2"></span></a></li>
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><p>...</p></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#"><span class="icon-arrow-right2"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

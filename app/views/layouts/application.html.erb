@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<%#    Copyright (C) 2013-2014 Computer Sciences Corporation %>
+
+<%#    Licensed under the Apache License, Version 2.0 (the "License"); %>
+<%#    you may not use this file except in compliance with the License. %>
+<%#    You may obtain a copy of the License at %>
+
+<%#        http://www.apache.org/licenses/LICENSE-2.0 %>
+
+<%#    Unless required by applicable law or agreed to in writing, software %>
+<%#    distributed under the License is distributed on an "AS IS" BASIS, %>
+<%#    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. %>
+<%#    See the License for the specific language governing permissions and %>
+<%#    limitations under the License. %>
+<%
+   @should_animate = (controller_name == 'home')
+%>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<%= csrf_meta_tags %>
+<title>Amino&trade; - Hypothesis Engine &trade;</title>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<%= stylesheet_link_tag 'reset' %><!-- CSS reset -->
+<%= stylesheet_link_tag 'base' %> <!-- Includes Box-Sizing and Clearfix -->
+<%= stylesheet_link_tag 'media-queries' %> <!-- Responsive Media Queries -->
+<%= stylesheet_link_tag 'custom-fonts' %> <!-- Custom Fonts Manager -->
+<%= stylesheet_link_tag 'application', media: 'all' %><!-- Webapp CSS -->
+<%= stylesheet_link_tag 'webapp-icons' %><!-- Webapp Icons CSS -->
+<%= stylesheet_link_tag 'animate' %><!-- Animate CSS -->
+
+<%= javascript_include_tag 'application'%>
+
+</head>
+<body ng-app="aminoApp">
+
+	<div id="webapp-wrapper" class="clearfix">
+		<%= render partial: 'layouts/header' %>
+		<div id="webapp-container">
+            <%= yield :modal %>
+            <%= yield :sidebar %>
+            <div id="webapp-content" class="content <%= 'bounceInLeftCustom animated' if @should_animate %>">
+                <div class="controls-wrapper">
+                    <div class="controls">
+                        <a id="webapp-menu-panel" href="#"><span class="icon-menu"></span></a>
+                        <%=  yield :control_bar %>
+                    </div>
+                    <%= yield :subcontrol_bar %>
+                </div>
+                <%= yield %>
+            </div>
+		</div>
+	</div>
+<!--
+    <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+-->
+</body>
+</html>

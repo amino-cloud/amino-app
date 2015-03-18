@@ -1,0 +1,50 @@
+<%#    Copyright (C) 2013-2014 Computer Sciences Corporation %>
+
+<%#    Licensed under the Apache License, Version 2.0 (the "License"); %>
+<%#    you may not use this file except in compliance with the License. %>
+<%#    You may obtain a copy of the License at %>
+
+<%#        http://www.apache.org/licenses/LICENSE-2.0 %>
+
+<%#    Unless required by applicable law or agreed to in writing, software %>
+<%#    distributed under the License is distributed on an "AS IS" BASIS, %>
+<%#    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. %>
+<%#    See the License for the specific language governing permissions and %>
+<%#    limitations under the License. %>
+<div id="datasetModal">
+	<script type="text/ng-template" id="myModalContent.html">
+	    <div class="modal-header">
+	        <h1 class="modal-title">Choose a Dataset</h1>
+	        <!--
+	        <div class="close-custom">
+				<span class="icon-cancel"></span>
+			</div>
+			-->
+	    </div>
+	    <div class="modal-body">
+	        <div class="btn-group" dropdown is-open="status.isopen">
+	        	<button type="button" class="btn btn-primary dropdown-toggle" ng-disabled="disabled">
+					{{datasource.name}}
+					<span class="icon icon-menu2"></span>
+				</button>
+				<ul id="datasetSelect" class="dropdown-menu" role="menu" ng-model="datasource">
+					<li>
+						Select a Dataset
+					</li>
+					<li ng-repeat="entry in datasources" ng-click="selected_datasource_change(entry)">
+						{{entry.name}}
+					</li>
+				</ul>
+	        </div>
+	    </div>
+	    <div class="modal-description">
+	    	<h2>Morbi egestas magna felis, non luctus nisi egestas sit amet.</h2>
+	    	<p>*Integer interdum commodo nulla, non porta lorem rhoncus in. Vivamus sollicitudin, hend rerit consequat velit luctus facilisis.neque non euismod porta, velit lacus egestas arcu, id aliquam magna eros ac nunc.</p>
+	    	<!-- {{datasource.description }} -->
+	    </div>
+	    <div class="modal-footer">
+	    	<button class="btn btn-primary" ng-click="ok(datasource)">Load Dataset</button>
+	    	<!-- <button class="btn btn-primary" ng-click="">Cancel</button> -->
+	    </div>
+	</script>
+</div>

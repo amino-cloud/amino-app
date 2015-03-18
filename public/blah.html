@@ -1,0 +1,66 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!--   Copyright (C) 2013-2014 Computer Sciences Corporation
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License. -->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Amino&trade; - Hypothesis Engine &trade;</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="/assets/jquery.js?body=1"></script>
+    <script src="/assets/jquery_ujs.js?body=1"></script>
+    <script src="/assets/jquery-switch.js?body=1"></script>
+    <script src="/assets/jquery-accordion.js?body=1"></script>
+    <script src="/assets/js-routes.js?body=1"></script>
+    <script src="/assets/angular.js?body=1"></script>
+    <script src="/assets/lodash.js?body=1"></script>
+    <script src="/assets/lib/abstract-chosen.js?body=1"></script>
+    <script src="/assets/lib/select-parser.js?body=1"></script>
+    <script src="/assets/chosen.jquery.js?body=1"></script>
+    <script src="/assets/chosen-jquery.js?body=1"></script>
+    <script src="/assets/angular-chosen.js?body=1"></script>
+    <script src="/assets/_init.js?body=1"></script>
+    <script src="/assets/controllers/inquire.js?body=1"></script>
+    <script src="/assets/controllers/features_sidebar.js?body=1"></script>
+    <script src="/assets/controllers/inquire.js?body=1"></script>
+    <script src="/assets/controllers/inquire_datasource_modal.js?body=1"></script>
+    <script src="/assets/controllers/inquire_sidebar.js?body=1"></script>
+    <script src="/assets/directives/inquiry_entry.js?body=1"></script>
+    <script src="/assets/feature_box_templates.js?body=1"></script>
+    <script src="/assets/bootstrap/affix.js?body=1"></script>
+    <script src="/assets/bootstrap/alert.js?body=1"></script>
+    <script src="/assets/bootstrap/button.js?body=1"></script>
+    <script src="/assets/bootstrap/carousel.js?body=1"></script>
+    <script src="/assets/bootstrap/collapse.js?body=1"></script>
+    <script src="/assets/bootstrap/dropdown.js?body=1"></script>
+    <script src="/assets/bootstrap/tab.js?body=1"></script>
+    <script src="/assets/bootstrap/transition.js?body=1"></script>
+    <script src="/assets/bootstrap/scrollspy.js?body=1"></script>
+    <script src="/assets/bootstrap/modal.js?body=1"></script>
+    <script src="/assets/bootstrap/tooltip.js?body=1"></script>
+    <script src="/assets/bootstrap/popover.js?body=1"></script>
+    <script src="/assets/bootstrap-sprockets.js?body=1"></script>
+    <script src="/assets/angular-ui-bootstrap-tpls.js?body=1"></script>
+    <script src="/assets/application.js?body=1"></script>
+    <link href="/assets/bootstrap.css?body=1" media="screen" rel="stylesheet" />
+
+
+</head>
+<body ng-app="aminoApp">
+<div ng-controller="test">
+    <input class="form-control" type="text" typeahead-append-to-body="true" ng-model="begin_range" typeahead="suggestion for suggestion in feature_typeahead($viewValue, entry)"/>
+</div>
+</body>
+</html>

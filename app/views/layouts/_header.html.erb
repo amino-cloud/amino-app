@@ -1,0 +1,30 @@
+<%#    Copyright (C) 2013-2014 Computer Sciences Corporation %>
+
+<%#    Licensed under the Apache License, Version 2.0 (the "License"); %>
+<%#    you may not use this file except in compliance with the License. %>
+<%#    You may obtain a copy of the License at %>
+
+<%#        http://www.apache.org/licenses/LICENSE-2.0 %>
+
+<%#    Unless required by applicable law or agreed to in writing, software %>
+<%#    distributed under the License is distributed on an "AS IS" BASIS, %>
+<%#    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. %>
+<%#    See the License for the specific language governing permissions and %>
+<%#    limitations under the License. %>
+<div class="header <%= 'bounceInDown animatedCustom' if @should_animate %> clearfix">
+	<div class="logo">
+		<a href="../">
+			<%= image_tag 'amino-logo.png' %>
+			<h1>Amino&trade;</h1>
+			<p>Hypothesis Engine</p>
+		</a>
+	</div>
+	<div class="controls clearfix">
+		<a class="user" href="#">
+			<%= image_tag 'sample-profile.jpg' %>
+			<span class="alerts-count">5</span>
+		</a>
+		<a class="controls-btn" href="../inquire"><span class="icon-file"></span></a> <!-- class="active"> -->
+		<a class="controls-btn" href="#"><span class="icon-book"></span></a>
+	</div>
+</div>

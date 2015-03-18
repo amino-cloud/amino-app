@@ -1,0 +1,36 @@
+<%#    Copyright (C) 2013-2014 Computer Sciences Corporation %>
+
+<%#    Licensed under the Apache License, Version 2.0 (the "License"); %>
+<%#    you may not use this file except in compliance with the License. %>
+<%#    You may obtain a copy of the License at %>
+
+<%#        http://www.apache.org/licenses/LICENSE-2.0 %>
+
+<%#    Unless required by applicable law or agreed to in writing, software %>
+<%#    distributed under the License is distributed on an "AS IS" BASIS, %>
+<%#    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. %>
+<%#    See the License for the specific language governing permissions and %>
+<%#    limitations under the License. %>
+<div id="confirmInquiryDeleteModal">
+    <script type="text/ng-template" id="confirmInquiryDeleteModal.html">
+        <div class="modal-header">
+            <h1 class="modal-title">Delete Inquiry?</h1>
+            <!--
+            <div class="close-custom">
+                <span class="icon-cancel"></span>
+            </div>
+            -->
+        </div>
+        <div class="modal-body">
+            <p>Are you sure you want to delete {{inquiry.name}}?</p>
+        </div>
+        <div class="modal-description">
+	    	<h2>Warning</h2>
+	    	<p>*Integer facilisis facilisis pulvinar. Proin nec ex euismod, auctor ante facilisis, tempor velit. Mauris id tristique ex, id vulputate sapien.</p>
+	    </div>
+        <div class="modal-footer modal-double">
+            <button class="btn btn-primary" ng-click="ok()">Delete</button>
+            <button class="btn" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+</div>

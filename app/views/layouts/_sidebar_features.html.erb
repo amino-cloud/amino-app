@@ -1,0 +1,60 @@
+<%#    Copyright (C) 2013-2014 Computer Sciences Corporation %>
+
+<%#    Licensed under the Apache License, Version 2.0 (the "License"); %>
+<%#    you may not use this file except in compliance with the License. %>
+<%#    You may obtain a copy of the License at %>
+
+<%#        http://www.apache.org/licenses/LICENSE-2.0 %>
+
+<%#    Unless required by applicable law or agreed to in writing, software %>
+<%#    distributed under the License is distributed on an "AS IS" BASIS, %>
+<%#    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. %>
+<%#    See the License for the specific language governing permissions and %>
+<%#    limitations under the License. %>
+<div id="webapp-side-panel" class="side-panel" ng-controller="featuresSidebar">
+    <div class="dataset-label">
+        <h1>{{datasource.name}}</h1>
+    </div>
+    <div class="inquiry-wrapper">
+    	
+    	<div class="bucket-wrapper">
+	    	<div class="btn-group" dropdown is-open="status.isopen">
+	        	<button type="button" class="btn btn-primary dropdown-toggle" ng-disabled="disabled">
+					{{bucket.name}}
+					<span class="icon icon-menu2"></span>
+				</button>
+				<ul id="bucketList" class="dropdown-menu" role="menu" ng-model="bucket">
+					<li>
+						Select a Feature Bucket
+					</li>
+					<li ng-repeat="entry in buckets" ng-click="selected_bucket_change(entry)">
+						{{entry.name}}
+					</li>
+				</ul>
+	        </div>
+		</div>
+		        
+        <div class="accordion-wrapper scroll-all clearfix">
+            <div class="accordionButton feature-category">Features <span class="features-category-label">Public</span>
+                <span class="icon-minus collapse"></span><span class="icon-plus expand"></span></div>
+            <div class="accordionContent features-all">
+                <div class="search filter">
+                    <div class="input-container">
+                        <input type="text" placeholder="Search"/>
+                        <button><span class="icon-cross2"></span></button>
+                    </div>
+                </div>
+                <ul id="features" class="entries">
+                    <li class="feature_element" data-id="{{entry.id}}" ng-repeat="entry in features">
+                        <a href="#" class="clearfix" ng-click="add_feature($event, entry.id)">
+                            <span class="icon-check"></span>
+                            <h2>{{entry.name}}</h2>
+                            <p>{{entry.description}}</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+</div>
